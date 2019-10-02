@@ -59,15 +59,20 @@ edu
 
 # Publications
 
+[Google Scholar page](https://scholar.google.com/citations?user=zcRmG_UAAAAJ&hl=en) has links to all publications.
+
 ```{r}
 pubs <- scholar::get_publications("zcRmG_UAAAAJ&hl=en") %>%
-  dplyr::select(-cites, -cid) %>%
+  dplyr::select(-cites, -cid, -number) %>%
   dplyr::rename_all(toupper) %>% 
   dplyr::arrange(desc(YEAR))
 
+pubs$AUTHOR <- gsub("CL Savonen|C Savonen", " **C Savonen** ", pubs$AUTHOR)
+pubs$JOURNAL <- c(as.character(pubs$JOURNAL[1:6]), "Oakland Univ. Honors College Thesis")
+
 pubs <- knitr::kable(pubs, "html") %>% 
   kableExtra::kable_styling() %>% 
-  kableExtra::column_spec(3:6, "5em") 
+  kableExtra::column_spec(3:5, "5em") 
 
 pubs
 ```
