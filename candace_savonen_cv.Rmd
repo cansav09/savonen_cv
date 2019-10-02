@@ -30,9 +30,24 @@ library(vitae)
 
 ```{r}
 edu <- tibble::tribble(~Degree, ~ Year, ~ Institution, ~ Where,
-  "Associate of Science", "2005 - 2009 ", "Monroe County Community College", "Monroe, MI",
-  "Bachelors of Science - Psychology/Biology", "2009 - 2013", "Oakland University", "Rochester Hills, MI",
-  "Masters of Neuroscience", "2015 - 2018", "Michigan State University", "East Lansing, MI"
+    "Masters of Neuroscience", "2015 - 2018", "Michigan State University", "East Lansing, MI",
+    "Bachelors of Science - Psychology/Biology", "2009 - 2013", "Oakland University", "Rochester Hills, MI",
+    "Associate of Science", "2005 - 2009 ", "Monroe County Community College", "Monroe, MI"
+)
+# Print this
+edu <- knitr::kable(edu, "html") %>% 
+  kableExtra::kable_styling() %>% 
+  kableExtra::column_spec(2, "10em")
+
+edu
+```
+
+# Work History
+
+```{r}
+edu <- tibble::tribble(~Title, ~ Year, ~ Institution, ~ Where,
+  "Biological Data Analyst", "2018 - Current", "Childhood Cancer Data Lab", "Philadelphia, PA",
+  "Research Assistant ", "2013 - 2015", "Wayne State School of Medicine, Pharmacology", "Detroit, MI",
 )
 # Print this
 edu <- knitr::kable(edu, "html") %>% 
@@ -52,7 +67,7 @@ pubs <- scholar::get_publications("zcRmG_UAAAAJ&hl=en") %>%
 
 pubs <- knitr::kable(pubs, "html") %>% 
   kableExtra::kable_styling() %>% 
-  kableExtra::column_spec(3:5, "10em") 
+  kableExtra::column_spec(3:6, "5em") 
 
 pubs
 ```
