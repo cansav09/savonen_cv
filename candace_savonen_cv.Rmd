@@ -1,5 +1,5 @@
 ---
-title: "Candace Lee Savonen."
+title: "Candace Lee Savonen"
 output:   
   prettydoc::html_pretty:
     theme: lumen
