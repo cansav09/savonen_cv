@@ -1,0 +1,65 @@
+---
+title: "Candace Lee Savonen."
+output:   
+  prettydoc::html_pretty:
+    theme: lumen
+---
+
+**Current Position:** Biological Data Analyst for [Childhood Cancer Data Lab](https://www.ccdatalab.org/)  
+**Phone:** 734 735 2469  
+**Website:** [cansav09.com](cansav09.com)  
+**GitHub:** [cansav09](https://github.com/cansav09)  
+**Email:** cansav09@gmail.com  
+**Last Update:** `r format(Sys.time(), '%B %Y')`  
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(vitae)
+```
+
+# Skills
+
+- Processing of gene expression data - microarray and RNA-Seq (including [single-cell](https://github.com/AlexsLemonade/scRNA-seq_sandbox))
+- R programming including [Bioconductor, Tidyverse, and RMarkdown](https://github.com/AlexsLemonade/refinebio-examples)
+- [Genomic data mining](https://github.com/cansav09/sample-code/blob/master/experiment_accession_retrieval.R)
+- Molecular neurobiology
+- Making [bioinformatics educational materials](https://github.com/AlexsLemonade/training-modules/tree/master/intro-to-R-tidyverse) and other [bioinformatics examples](https://github.com/AlexsLemonade/refinebio-examples)
+- Analyzing [single nucleotide variant data](https://github.com/AlexsLemonade/OpenPBTA-analysis/tree/master/analyses/snv-callers)
+
+# Education
+
+```{r}
+edu <- tibble::tribble(~Degree, ~ Year, ~ Institution, ~ Where,
+  "Associate of Science", "2005 - 2009 ", "Monroe County Community College", "Monroe, MI",
+  "Bachelors of Science - Psychology/Biology", "2009 - 2013", "Oakland University", "Rochester Hills, MI",
+  "Masters of Neuroscience", "2015 - 2018", "Michigan State University", "East Lansing, MI"
+)
+# Print this
+edu <- knitr::kable(edu, "html") %>% 
+  kableExtra::kable_styling() %>% 
+  kableExtra::column_spec(2, "10em")
+
+edu
+```
+
+# Publications
+
+```{r}
+pubs <- scholar::get_publications("zcRmG_UAAAAJ&hl=en") %>%
+  dplyr::select(-cites, -cid) %>%
+  dplyr::rename_all(toupper) %>% 
+  dplyr::arrange(desc(YEAR))
+
+pubs <- knitr::kable(pubs, "html") %>% 
+  kableExtra::kable_styling() %>% 
+  kableExtra::column_spec(3:5, "10em") 
+
+pubs
+```
+
+# Fun facts
+- She has spent way too much time on making a trivia quiz all about the state of Michigan.
+- She swam Division I NCAA for Oakland University (was team captain).
+- She ran a Marathon (the Disney marathon).
+- Her fiancé Jon and her have two dogs named Eevee and Jäger, both are mixed breed rescues that are quirky.
+
