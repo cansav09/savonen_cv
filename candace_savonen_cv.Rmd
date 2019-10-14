@@ -7,7 +7,7 @@ output:
 
 **Current Position:** Biological Data Analyst for [Childhood Cancer Data Lab](https://www.ccdatalab.org/)  
 **Phone:** 734 735 2469  
-**Website:** [cansavvy.com](cansavvy.com)  
+**Website:** [cansavvy.com](https://cansavvy.com)  
 **GitHub:** [cansavvy](https://github.com/cansavvy)  
 **Email:** cansav09@gmail.com  
 **Last Update:** `r format(Sys.time(), '%B %Y')`  
