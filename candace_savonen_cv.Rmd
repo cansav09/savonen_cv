@@ -21,7 +21,7 @@ library(vitae)
 
 - Processing of gene expression data - Microarray and RNA-Seq (including [Single-cell](https://github.com/AlexsLemonade/scRNA-seq_sandbox))
 - R programming including [Bioconductor, Tidyverse, and RMarkdown](https://github.com/AlexsLemonade/refinebio-examples)
-- [Genomic data mining](https://github.com/cansav09/sample-code/blob/master/experiment_accession_retrieval.R)
+- [Genomic data mining](https://github.com/cansavvy/sample-code/blob/master/experiment_accession_retrieval.R)
 - Molecular neurobiology
 - Making [bioinformatics educational materials](https://github.com/AlexsLemonade/training-modules/tree/master/intro-to-R-tidyverse) and other [bioinformatics examples](https://github.com/AlexsLemonade/refinebio-examples)
 - Analyzing [single nucleotide variant data](https://github.com/AlexsLemonade/OpenPBTA-analysis/tree/master/analyses/snv-callers)
@@ -84,6 +84,6 @@ pubs
 
 # Fun facts
 - She has spent way too much time on making a trivia quiz all about the state of Michigan.
-- She [swam Division I NCAA for Oakland University (was team captain)](https://www.collegeswimming.com/swimmer/90314/)v.
+- She [swam Division I NCAA for Oakland University (was team captain)](https://www.collegeswimming.com/swimmer/90314/).
 - She ran a Marathon (the Disney marathon).
 - Her fiancé Jon and her have two dogs named Eevee and Jäger, both are mixed breed rescues that are quirky.
