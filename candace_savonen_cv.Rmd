@@ -7,8 +7,8 @@ output:
 
 **Current Position:** Biological Data Analyst for [Childhood Cancer Data Lab](https://www.ccdatalab.org/)  
 **Phone:** 734 735 2469  
-**Website:** [cansav09.com](cansav09.com)  
-**GitHub:** [cansav09](https://github.com/cansav09)  
+**Website:** [cansavvy.com](cansavvy.com)  
+**GitHub:** [cansavvy](https://github.com/cansavvy)  
 **Email:** cansav09@gmail.com  
 **Last Update:** `r format(Sys.time(), '%B %Y')`  
 
@@ -19,7 +19,7 @@ library(vitae)
 
 # Skills
 
-- Processing of gene expression data - microarray and RNA-Seq (including [single-cell](https://github.com/AlexsLemonade/scRNA-seq_sandbox))
+- Processing of gene expression data - Microarray and RNA-Seq (including [Single-cell](https://github.com/AlexsLemonade/scRNA-seq_sandbox))
 - R programming including [Bioconductor, Tidyverse, and RMarkdown](https://github.com/AlexsLemonade/refinebio-examples)
 - [Genomic data mining](https://github.com/cansav09/sample-code/blob/master/experiment_accession_retrieval.R)
 - Molecular neurobiology
@@ -29,16 +29,18 @@ library(vitae)
 # Education
 
 ```{r}
+# Make education history table
 edu <- tibble::tribble(~Degree, ~ Year, ~ Institution, ~ Where,
-    "Masters of Neuroscience", "2015 - 2018", "Michigan State University", "East Lansing, MI",
-    "Bachelors of Science - Psychology/Biology", "2009 - 2013", "Oakland University", "Rochester Hills, MI",
-    "Associate of Science", "2005 - 2009 ", "Monroe County Community College", "Monroe, MI"
+  "Masters of Neuroscience", "2015 - 2018", "Michigan State University", "East Lansing, MI",
+  "Bachelors of Science - Psychology/Biology", "2009 - 2013", "Oakland University", "Rochester Hills, MI",
+  "Associate of Science", "2005 - 2009 ", "Monroe County Community College", "Monroe, MI"
 )
-# Print this
+# Adjust style
 edu <- knitr::kable(edu, "html") %>% 
   kableExtra::kable_styling() %>% 
   kableExtra::column_spec(2, "10em")
 
+# Print this
 edu
 ```
 
@@ -62,24 +64,26 @@ edu
 [Google Scholar page](https://scholar.google.com/citations?user=zcRmG_UAAAAJ&hl=en) has links to all publications.
 
 ```{r}
+# Set up publications 
 pubs <- scholar::get_publications("zcRmG_UAAAAJ&hl=en") %>%
-  dplyr::select(-cites, -cid, -number) %>%
+  dplyr::select(-cites, -cid, -number, -pubid) %>%
   dplyr::rename_all(toupper) %>% 
-  dplyr::arrange(desc(YEAR))
+  dplyr::arrange(desc(YEAR)) %>% 
+  dplyr::mutate(AUTHOR = gsub("CL Savonen|C Savonen", " **C Savonen** ", AUTHOR),
+                JOURNAL =c(as.character(JOURNAL[1:6]), "Oakland Univ. Honors College Thesis")
+                )
 
-pubs$AUTHOR <- gsub("CL Savonen|C Savonen", " **C Savonen** ", pubs$AUTHOR)
-pubs$JOURNAL <- c(as.character(pubs$JOURNAL[1:6]), "Oakland Univ. Honors College Thesis")
-
+# Make it a pretty table
 pubs <- knitr::kable(pubs, "html") %>% 
   kableExtra::kable_styling() %>% 
-  kableExtra::column_spec(3:5, "5em") 
+  kableExtra::column_spec(3:4, "5em") 
 
+# Print it out
 pubs
 ```
 
 # Fun facts
 - She has spent way too much time on making a trivia quiz all about the state of Michigan.
-- She swam Division I NCAA for Oakland University (was team captain).
+- She [swam Division I NCAA for Oakland University (was team captain)](https://www.collegeswimming.com/swimmer/90314/)v.
 - She ran a Marathon (the Disney marathon).
 - Her fiancé Jon and her have two dogs named Eevee and Jäger, both are mixed breed rescues that are quirky.
-
