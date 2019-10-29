@@ -2,7 +2,7 @@
 title: "Candace Lee Savonen"
 output:   
   prettydoc::html_pretty:
-    theme: lumen
+    theme: cayman
 ---
 
 **Current Position:** Biological Data Analyst for [Childhood Cancer Data Lab](https://www.ccdatalab.org/)  
@@ -17,14 +17,20 @@ knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 library(vitae)
 ```
 
-# Skills
+# Specific established skills
 
 - Processing of gene expression data - Microarray and RNA-Seq (including [Single-cell](https://github.com/AlexsLemonade/scRNA-seq_sandbox))
 - R programming including [Bioconductor, Tidyverse, and RMarkdown](https://github.com/AlexsLemonade/refinebio-examples)
 - [Genomic data mining](https://github.com/cansavvy/sample-code/blob/master/experiment_accession_retrieval.R)
 - Molecular neurobiology
 - Making [bioinformatics educational materials](https://github.com/AlexsLemonade/training-modules/tree/master/intro-to-R-tidyverse) and other [bioinformatics examples](https://github.com/AlexsLemonade/refinebio-examples)
-- Analyzing [single nucleotide variant data](https://github.com/AlexsLemonade/OpenPBTA-analysis/tree/master/analyses/snv-callers)
+- Evaluating [single nucleotide variant datasets](https://github.com/AlexsLemonade/OpenPBTA-analysis/tree/master/analyses/snv-callers)
+
+# Broader skills 
+
+- Learns new data types and methods efficiently
+- Good at working as a part of a team
+- Welcomes and incorporates constructive feedback
 
 # Education
 
@@ -70,7 +76,8 @@ pubs <- scholar::get_publications("zcRmG_UAAAAJ&hl=en") %>%
   dplyr::rename_all(toupper) %>% 
   dplyr::arrange(desc(YEAR)) %>% 
   dplyr::mutate(AUTHOR = gsub("CL Savonen|C Savonen", " **C Savonen** ", AUTHOR),
-                JOURNAL =c(as.character(JOURNAL[1:6]), "Oakland Univ. Honors College Thesis")
+                JOURNAL =c(as.character(JOURNAL[1:6]), "Oakland Univ. Honors College Thesis"), 
+                TITLE = gsub("RNA s", "RNAs", TITLE),
                 )
 
 # Make it a pretty table
@@ -82,8 +89,7 @@ pubs <- knitr::kable(pubs, "html") %>%
 pubs
 ```
 
-# Fun facts
-- She has spent way too much time on making a trivia quiz all about the state of Michigan.
+# Fun Facts
 - She [swam Division I NCAA for Oakland University (was team captain)](https://www.collegeswimming.com/swimmer/90314/).
 - She ran a Marathon (the Disney marathon).
-- Her fiancé Jon and her have two dogs named Eevee and Jäger, both are mixed breed rescues that are quirky.
+- She has two mixed breed rescue dogs with her husband, Jon. 
